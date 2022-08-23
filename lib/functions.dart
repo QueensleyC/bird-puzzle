@@ -5,10 +5,11 @@ import 'model/piece.dart';
 class Functions {
   static bool isComplete = false;
   static late Piece defaultPieceArray;
+  static List<String> flutterPieces = [];
 
-  // D, G and I are special cases
+  /// D, G and I are special cases
 
-  //1 - toucan, 2 - yellowParrot, 3 - dove, 4 - greenParrot
+  ///1 - toucan, 2 - yellowParrot, 3 - dove, 4 - greenParrot
 
   final A = Piece("A", 3.2, 1.2, 4.2, 3.1); //0
   final B = Piece("B", 2.1, 3.1, 4.2, 1.1); //1
@@ -249,6 +250,7 @@ class Functions {
     for (int i = 0; i < 3; i++) {
       //display the result
       for (int j = 0; j < 3; j++) {
+        flutterPieces.add(matrix[i][j]);
         stderr.write(matrix[i][j] + " "); // similar to System.out.print()
       }
       stderr.writeln(); // similar to System.out.println()
