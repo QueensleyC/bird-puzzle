@@ -1,26 +1,50 @@
 class Piece {
   late String pieceName;
-  late double a, b, c, d;
+  late double top, right, bottom, left;
 
-  Piece(this.pieceName, this.a, this.b, this.c, this.d);
+  Piece({
+    required this.pieceName,
+    required this.top,
+    required this.right,
+    required this.bottom,
+    required this.left,
+  });
 
-  String get getPieceName{
+  String get getPieceName {
     return pieceName;
   }
 
   Piece rotateRight() {
     //rotates a piece to the right
-    return Piece(pieceName, d, a, b, c);
+    return Piece(
+      pieceName: pieceName,
+      top: left,
+      right: top,
+      bottom: right,
+      left: bottom,
+    );
   }
 
   Piece rotateLeft() {
     //rotates a piece to the left
-    return Piece(pieceName, b, c, d, a);
+    return Piece(
+      pieceName: pieceName,
+      top: right,
+      right: bottom,
+      bottom: left,
+      left: top,
+    );
   }
 
   Piece rotateTwice() {
     //rotates a piece twice
-    return Piece(pieceName, c, d, a, b);
+    return Piece(
+      pieceName: pieceName,
+      top: bottom,
+      right: left,
+      bottom: top,
+      left: right,
+    );
   }
 
   void printPiece() {
@@ -54,16 +78,16 @@ class Piece {
         switch (int.parse(ij)) {
           //convert ij to int and assign the respective slots
           case 01:
-            matrix[0][1] = a.toString();
+            matrix[0][1] = top.toString();
             break;
           case 10:
-            matrix[1][2] = b.toString();
+            matrix[1][2] = right.toString();
             break;
           case 12:
-            matrix[2][1] = c.toString();
+            matrix[2][1] = bottom.toString();
             break;
           case 21:
-            matrix[1][0] = d.toString();
+            matrix[1][0] = left.toString();
             break;
           default:
             matrix[i][j] = "   ";
@@ -84,16 +108,16 @@ class Piece {
     //returns a specific side of a piece
     switch (i) {
       case 0:
-        return a;
+        return top;
 
       case 1:
-        return b;
+        return right;
 
       case 2:
-        return c;
+        return bottom;
 
       case 3:
-        return d;
+        return left;
 
       default:
         return 0;
