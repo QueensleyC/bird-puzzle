@@ -104,7 +104,8 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     var deviceWidth = MediaQuery.of(context).size.width;
     var width = (deviceWidth - 50) / 3;
-    List? letters = Functions.flutterPieces; // A list containing the pieces that form the matrix
+    List? letters = Functions
+        .flutterPieces; // A list containing the pieces that form the matrix
 
     return Scaffold(
       appBar: AppBar(
@@ -112,136 +113,138 @@ class _HomeState extends State<Home> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(25.0),
-        child: Column(
-          children: [
-            Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: 20,
-                      width: 20,
-                      child: Text("${letters[0]}"),
-                    ),
-                    SizedBox(
-                      height: 20,
-                      width: 20,
-                      child: Text("${letters[1]}"),
-                    ),
-                    SizedBox(
-                      height: 20,
-                      width: 20,
-                      child: Text("${letters[2]}"),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: 20,
-                      width: 20,
-                      child: Text("${letters[3]}"),
-                    ),
-                    SizedBox(
-                      height: 20,
-                      width: 20,
-                      child: Text("${letters[4]}"),
-                    ),
-                    SizedBox(
-                      height: 20,
-                      width: 20,
-                      child: Text("${letters[5]}"),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: 20,
-                      width: 20,
-                      child: Text("${letters[6]}"),
-                    ),
-                    SizedBox(
-                      height: 20,
-                      width: 20,
-                      child: Text("${letters[7]}"),
-                    ),
-                    SizedBox(
-                      height: 20,
-                      width: 20,
-                      child: Text("${letters[8]}"),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Row(
-                  children: [
-                    SizedBox(
-                      height: width,
-                      width: width,
-                      child: Image.asset("images/${letters[0]}.jpg"),
-                    ),
-                    SizedBox(
-                      height: width,
-                      width: width,
-                      child: Image.asset("images/${letters[1]}.jpg"),
-                    ),
-                    SizedBox(
-                      height: width,
-                      width: width,
-                      child: Image.asset("images/${letters[2]}.jpg"),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    SizedBox(
-                      height: width,
-                      width: width,
-                      child: Image.asset("images/${letters[3]}.jpg"),
-                    ),
-                    SizedBox(
-                      height: width,
-                      width: width,
-                      child: Image.asset("images/${letters[4]}.jpg"),
-                    ),
-                    SizedBox(
-                      height: width,
-                      width: width,
-                      child: Image.asset("images/${letters[5]}.jpg"),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    SizedBox(
-                      height: width,
-                      width: width,
-                      child: Image.asset("images/${letters[6]}.jpg"),
-                    ),
-                    SizedBox(
-                      height: width,
-                      width: width,
-                      child: Image.asset("images/${letters[7]}.jpg"),
-                    ),
-                    SizedBox(
-                      height: width,
-                      width: width,
-                      child: Image.asset("images/${letters[8]}.jpg"),
-                    ),
-                  ],
-                ),
-              ],
-            )
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 20,
+                        width: 20,
+                        child: Text("${letters[0]}"),
+                      ),
+                      SizedBox(
+                        height: 20,
+                        width: 20,
+                        child: Text("${letters[1]}"),
+                      ),
+                      SizedBox(
+                        height: 20,
+                        width: 20,
+                        child: Text("${letters[2]}"),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 20,
+                        width: 20,
+                        child: Text("${letters[3]}"),
+                      ),
+                      SizedBox(
+                        height: 20,
+                        width: 20,
+                        child: Text("${letters[4]}"),
+                      ),
+                      SizedBox(
+                        height: 20,
+                        width: 20,
+                        child: Text("${letters[5]}"),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 20,
+                        width: 20,
+                        child: Text("${letters[6]}"),
+                      ),
+                      SizedBox(
+                        height: 20,
+                        width: 20,
+                        child: Text("${letters[7]}"),
+                      ),
+                      SizedBox(
+                        height: 20,
+                        width: 20,
+                        child: Text("${letters[8]}"),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                    children: [
+                      SizedBox(
+                        height: width,
+                        width: width,
+                        child: Image.asset("images/${letters[0]}.jpg"),
+                      ),
+                      SizedBox(
+                        height: width,
+                        width: width,
+                        child: Image.asset("images/${letters[1]}.jpg"),
+                      ),
+                      SizedBox(
+                        height: width,
+                        width: width,
+                        child: Image.asset("images/${letters[2]}.jpg"),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      SizedBox(
+                        height: width,
+                        width: width,
+                        child: Image.asset("images/${letters[3]}.jpg"),
+                      ),
+                      SizedBox(
+                        height: width,
+                        width: width,
+                        child: Image.asset("images/${letters[4]}.jpg"),
+                      ),
+                      SizedBox(
+                        height: width,
+                        width: width,
+                        child: Image.asset("images/${letters[5]}.jpg"),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      SizedBox(
+                        height: width,
+                        width: width,
+                        child: Image.asset("images/${letters[6]}.jpg"),
+                      ),
+                      SizedBox(
+                        height: width,
+                        width: width,
+                        child: Image.asset("images/${letters[7]}.jpg"),
+                      ),
+                      SizedBox(
+                        height: width,
+                        width: width,
+                        child: Image.asset("images/${letters[8]}.jpg"),
+                      ),
+                    ],
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );

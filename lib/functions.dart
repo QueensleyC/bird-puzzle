@@ -83,7 +83,6 @@ class Functions {
     left: 1.1,
   ); //8
 
-
   final defaultPiece = Piece(
     pieceName: "P",
     top: 0,
